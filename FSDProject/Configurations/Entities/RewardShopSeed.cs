@@ -42,7 +42,6 @@ namespace FSDProject.Configurations.Entities
                     RewardShopId = 5,
                     RewardType = "AppleWatch",
                     PointCost = "600 points"
-
                 }
             );
         }

@@ -18,7 +18,7 @@ namespace FSDProject.Data
         public DbSet<FSDProject.Domain.Course> Course { get; set; } = default!;
         public DbSet<FSDProject.Domain.CourseDatabase> CourseDatabase { get; set; } = default!;
         public DbSet<FSDProject.Domain.RewardShop> RewardShop { get; set; } = default!;
-        public DbSet<FSDProject.Domain.Score> Score { get; set; } = default!;        
+        public DbSet<FSDProject.Domain.Score> Score { get; set; } = default!;
         public DbSet<FSDProject.Domain.StoreItem> StoreItem { get; set; } = default!;
         public DbSet<FSDProject.Domain.UserAcc> UserAcc { get; set; } = default!;
         public DbSet<FSDProject.Domain.UserProfile> UserProfile { get; set; } = default!;
@@ -30,7 +30,9 @@ namespace FSDProject.Data
             Builder.ApplyConfiguration(new CourseDatabaseSeed());
             Builder.ApplyConfiguration(new RewardShopSeed());
             Builder.ApplyConfiguration(new StoreItemSeed());
+            Builder.ApplyConfiguration(new CourseSeed());
+            Builder.ApplyConfiguration(new UserProfileSeed());
+            Builder.ApplyConfiguration(new UserAccSeed());
         }
-
     }
 }

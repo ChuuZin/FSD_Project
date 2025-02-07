@@ -11,7 +11,7 @@ namespace FSDProject.Domain
 
         public ICollection<Course>? Courses { get; set; }//navigator property
 
-        public int UserProfileId { get; set; }//Foreign Property
+        public int? UserProfileId { get; set; }//Foreign Property
         public UserProfile? UserProfile { get; set; }//navigator property
     }
 

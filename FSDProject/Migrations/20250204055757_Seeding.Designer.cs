@@ -3,6 +3,7 @@ using FSDProject.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FSDProject.Migrations
 {
     [DbContext(typeof(FSDProjectContext))]
-    partial class FSDProjectContextModelSnapshot : ModelSnapshot
+    [Migration("20250204055757_Seeding")]
+    partial class Seeding
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -436,13 +439,13 @@ namespace FSDProject.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserProfileId"));
 
-                    b.Property<int?>("CourseId")
+                    b.Property<int>("CourseId")
                         .HasColumnType("int");
 
                     b.Property<int?>("CurrentPoints")
                         .HasColumnType("int");
 
-                    b.Property<int?>("RewardId")
+                    b.Property<int>("RewardId")
                         .HasColumnType("int");
 
                     b.Property<string>("Status")
@@ -541,11 +544,14 @@ namespace FSDProject.Migrations
                     b.HasOne("FSDProject.Domain.Course", "Course")
                         .WithMany()
                         .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("FSDProject.Domain.RewardShop", "Reward")
                         .WithMany("UserProfile")
-                        .HasForeignKey("RewardId");
+                        .HasForeignKey("RewardId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Course");
 

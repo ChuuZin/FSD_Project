@@ -8,6 +8,7 @@ namespace FSDProject.Domain
         public string? CourseName { get; set; }
         public float? CoursePrice { get; set; }
         public string? CourseDuration { get; set; }
+        public int? CompletionPercentage { get; set; }
 
         
         public int? UserAccId { get; set; }//Foreign key Property

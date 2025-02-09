@@ -31,8 +31,7 @@ namespace FSDProject.Data
             Builder.ApplyConfiguration(new RewardShopSeed());
             Builder.ApplyConfiguration(new StoreItemSeed());
             Builder.ApplyConfiguration(new CourseSeed());
-            Builder.ApplyConfiguration(new UserProfileSeed());
-            Builder.ApplyConfiguration(new UserAccSeed());
+            
         }
     }
 }

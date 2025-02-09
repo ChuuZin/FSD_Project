@@ -29,7 +29,12 @@
                 <label for="courseduration" class="form-label">CourseDuration:</label> 
                 <InputText id="courseduration" @bind-Value="Course.CourseDuration" class="form-control" /> 
                 <ValidationMessage For="() => Course.CourseDuration" class="text-danger" /> 
-            </div>        
+            </div>   
+            <div class="mb-3">
+                <label for="completionpercentage" class="form-label">CompletionPercentage:</label>
+                <InputNumber id="completionpercentage" @bind-Value="Course.CompletionPercentage" class="form-control" />
+                <ValidationMessage For="() => Course.CompletionPercentage" class="text-danger" />
+            </div>
             <div class="mb-3">
                 <label for="useraccid" class="form-label">UserAccId:</label> 
                 <InputNumber id="useraccid" @bind-Value="Course.UserAccId" class="form-control" /> 
